@@ -46,6 +46,7 @@ export const List: React.FC<Props> = () => {
       try {
         const response = await axios.get("https://restcountries.com/v3.1/all");
         const data = response.data;
+        console.log(data);
         setRes(data);
         setLikes(new Array(data.length).fill(0));
         dispatch({ type: "SET_PRODUCTS", payload: data });
